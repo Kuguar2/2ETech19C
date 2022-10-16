@@ -36,6 +36,7 @@ namespace kartaPracy2a
              * (easy) Sprawdź, czy średnia arytmetyczna dwóch wpisanych liczb jest wieksza od jej średniej geometrycznej.
                 Wejście: a,g
                 Wyjście: TAK / NIE
+                
             Console.Write("Podaj pierwszą liczbę: ");
             int a = int.Parse(Console.ReadLine());
             Console.Write("Podaj drugą liczbę: ");
@@ -146,6 +147,7 @@ namespace kartaPracy2a
                 ten trójką jest ostrokątny, prostokątny czy rozwartokątny.
                 Wejście: a, b, c
                 Wyjście: ostro-, prosto-, rozwarto-kątny
+                
             Console.Write("Podaj pierwszą liczbę: ");
             int a = int.Parse(Console.ReadLine());
             Console.Write("Podaj drugą liczbę: ");
