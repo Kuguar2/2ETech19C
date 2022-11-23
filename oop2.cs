@@ -6,22 +6,21 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    class Library_Managment_System
+    class User
     {
-        public int UserType;
-        public string UserName;
-        private int Password;
-        public void login()
+        public int id;
+        private string Name;
+        public void Verify()
         {
-            Console.WriteLine("Metoda login z klasy library managment system");
+            Console.WriteLine("metoda verify z klasy User");
         }
-        private void Register()
+        public void Checkaccount()
         {
-            Console.WriteLine("Metoda register z klasy library managment system");
+            Console.WriteLine("metoda check account z klasy User");
         }
-        public void Logout()
+        public void GetBookInfo()
         {
-            Console.WriteLine("Metoda logout z klasy library managment system");
+            Console.WriteLine("metoda get book info z klasy User");
         }
     }
     class Book
@@ -94,6 +93,43 @@ namespace ConsoleApp2
             Console.WriteLine("Metoda search z klasy library database");
         }
     }
+    class Library_Managment_System
+    {
+        public int UserType;
+        public string UserName;
+        private int Password;
+        public void login()
+        {
+            Console.WriteLine("Metoda login z klasy library managment system");
+        }
+        private void Register()
+        {
+            Console.WriteLine("Metoda register z klasy library managment system");
+        }
+        public void Logout()
+        {
+            Console.WriteLine("Metoda logout z klasy library managment system");
+        }
+    }
+    
+    class Account
+    {
+        public string no_borrowed_books;
+        private string no_lost_books;
+        public string no_returned_books;
+        public void Calculate_fine()
+        {
+            Console.WriteLine("metoda calculate fine z klasy User");
+        }
+    }
+    class Staff
+    {
+        public string dept;
+    }
+    class Student
+    {
+        public string Class;
+    }
     class Program
     {
         static void Main(string[] args)
@@ -104,13 +140,14 @@ namespace ConsoleApp2
             book.Book_request();
             book.Renw_info();
 
+
             book.librarian = new Librarian();
             book.librarian.Name = "Jerzy";
             book.librarian.Password = 1;
             book.librarian.Search();
 
             Librarian librarian = new Librarian();
-            
+
             librarian.library = new library_database();
 
             librarian.library.List_of_books = "yes";
@@ -131,3 +168,4 @@ namespace ConsoleApp2
         }
     }
 }
+
