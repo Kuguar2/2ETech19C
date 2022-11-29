@@ -1,171 +1,174 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApp2
+namespace ConsoleApp1
 {
-    class User
+    internal class User
     {
-        public int id;
-        private string Name;
+        public string Name;
+        public int ID;
+
         public void Verify()
         {
-            Console.WriteLine("metoda verify z klasy User");
+            Console.WriteLine("Verify");
         }
-        public void Checkaccount()
+        public void CheckAccount()
         {
-            Console.WriteLine("metoda check account z klasy User");
+            Console.WriteLine("Check account");
         }
-        public void GetBookInfo()
+        public void get_book_info()
         {
-            Console.WriteLine("metoda get book info z klasy User");
+            Console.WriteLine("Get book info");
         }
     }
-    class Book
+    internal class Book
     {
-        public string Title;
-        public string Author;
-        private int ISBN;
-        public int Publication;
-        public Librarian librarian;
-        public Library_Managment_System management;
+        public string title, Author, ISBN, Publication;
+
         public void Show_duedt()
         {
-            Console.WriteLine("Metoda show duedt z klasy book");
+            Console.WriteLine("Due time");
         }
-        private void Reservation_status()
+        public void Reservation_status()
         {
-            Console.WriteLine("Metoda reservation status z klasy book");
+            Console.WriteLine("Reservation_status");
         }
-        private void Feedback()
+        public void Feedback()
         {
-            Console.WriteLine("Metoda feedback z klasy book");
+            Console.WriteLine("Feedback");
         }
         public void Book_request()
         {
-            Console.WriteLine("Metoda Book request z klasy book");
+            Console.WriteLine("Book_request");
         }
         public void Renw_info()
         {
-            Console.WriteLine("Metoda renw info z klasy book");
+            Console.WriteLine("Renew info");
         }
     }
-    class Librarian
+    internal class Librarian
     {
-        public string Name;
-        private string ID;
-        public int Password;
-        public int SearchString;
-        public library_database library;
-        public Library_Managment_System System;
-        private void Verify_librarian()
+        public string Name, Password, SearchString;
+        public int ID;
+        public List<Book> listOfRentedBooks;
+
+        public void Verify_librarian()
         {
-            Console.WriteLine("Metoda verify librarian z klasy librarian");
+            Console.WriteLine("Verified");
         }
         public void Search()
         {
-            Console.WriteLine("Metoda Search z klasy librarian");
+            Console.WriteLine("Found");
+        }
+
+        public void RentBook()
+        {
+
+            /* TOTALNIE LUZNE ROZWAZANIA NA PRZYSZŁOŚĆ
+             * Library_DataBase db = new Library_DataBase();
+            Book ksiazka = new Book();
+            db.Search();
+            listOfRentedBooks.Add(ksiazka);*/
+
+            Console.WriteLine("Rent Book");
         }
     }
-    class library_database
+
+
+
+    internal class Library_DataBase
     {
-        public string List_of_books;
+        public List<string> List_Of_Books = new List<string>();
+        public Librarian lib;
+
         public void Add()
         {
-            Console.WriteLine("Metoda add z klasy library database");
+            Console.WriteLine("Add");
         }
-        private void Delete()
+        public void Delete()
         {
-            Console.WriteLine("Metoda delete z klasy library database");
+            Console.WriteLine("Delete");
         }
         public void Update()
         {
-            Console.WriteLine("Metoda update z klasy library database");
+            Console.WriteLine("Update");
         }
-        private void Display()
+        public void Display()
         {
-            Console.WriteLine("Metoda display z klasy library database");
+            Console.WriteLine("Display");
         }
         public void Search()
         {
-            Console.WriteLine("Metoda search z klasy library database");
+            Console.WriteLine("Search");
         }
+        public void getLibrarian()
+        {
+            Console.WriteLine("Librarian: xxx");
+        }
+
     }
-    class Library_Managment_System
+    internal class LibraryManagmentSystem
     {
-        public int UserType;
-        public string UserName;
-        private int Password;
-        public void login()
+
+        public string UserType;
+        public string Username; 
+        public string Password;
+
+        public void Login()
         {
-            Console.WriteLine("Metoda login z klasy library managment system");
+            Console.WriteLine("Login");
         }
-        private void Register()
+        public void Register()
         {
-            Console.WriteLine("Metoda register z klasy library managment system");
+            Console.WriteLine("Register");
         }
         public void Logout()
         {
-            Console.WriteLine("Metoda logout z klasy library managment system");
+            Console.WriteLine("Logout");
         }
     }
     
-    class Account
+
+    internal class Account
     {
-        public string no_borrowed_books;
-        private string no_lost_books;
-        public string no_returned_books;
+        public bool no_borrowed_books, no_reserved_books, no_returned_books, no_lost_books, fine_amount;
+
         public void Calculate_fine()
         {
-            Console.WriteLine("metoda calculate fine z klasy User");
+            Console.WriteLine("Fine");
         }
     }
-    class Staff
-    {
-        public string dept;
-    }
-    class Student
+
+
+    internal class Student
     {
         public string Class;
     }
-    class Program
+    internal class Staff
+    {
+        public string Dept;
+    }
+
+    internal class Program
     {
         static void Main(string[] args)
         {
-            Book book = new Book();
-            book.Title = "To";
-            book.Author = "Stephen King";
-            book.Book_request();
-            book.Renw_info();
+            Book book1 = new Book();
+            book1.Show_duedt();
+            book1.Feedback();
 
+            Librarian libek = new Librarian();
+            libek.Name = "Bartosz";
+            //libek.setName("Bartosz");
+            libek.ID = 123;
+            libek.Verify_librarian();
+            List<Book> lista = new List<Book>();
+            lista.Add(book1);
+            libek.listOfRentedBooks = lista;
 
-            book.librarian = new Librarian();
-            book.librarian.Name = "Jerzy";
-            book.librarian.Password = 1;
-            book.librarian.Search();
-
-            Librarian librarian = new Librarian();
-
-            librarian.library = new library_database();
-
-            librarian.library.List_of_books = "yes";
-            librarian.library.Add();
-            librarian.library.Update();
-            librarian.library.Search();
-
-
-            book.management = new Library_Managment_System();
-            book.management.login();
-            book.management.Logout();
-
-            librarian.System = new Library_Managment_System();
-            librarian.System.login();
-            librarian.System.Logout();
+            // I tyle testów może wystarczy : )
 
             Console.ReadKey();
         }
     }
 }
-
