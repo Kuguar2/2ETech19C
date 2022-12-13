@@ -58,7 +58,6 @@ namespace ConsoleApp3
                 if(i % 8 == 0 && i % 16 != 0)
                 {
                     suma += i;
-                    Console.WriteLine($"{i}");
                 }
             }
             Console.WriteLine($"suma = {suma}");
