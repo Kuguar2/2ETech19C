@@ -1,26 +1,4 @@
 using System;
-class Rower{
-  private Producent producent;
-  private string kolor;
-  private Material material;
-  public void jedz(){
-      Console.WriteLine("jedź");
-  }
-  public string getKolor()
-      {
-          return kolor;
-      }
-      public void setKolor(string akolor)
-      {
-          this.kolor = akolor;
-      }
-  public void setMaterial(Material amaterial){
-      this.material = amaterial;
-  }
-  public Rower(Producent aproducent){
-    this.producent = aproducent;
-  }
-}
 class Producent
 {
     public string nazwa;
@@ -57,6 +35,28 @@ class Material
     public void setId(int aid){
         this.id = aid;
     }
+}
+class Rower{
+  private Producent producent;
+  private string kolor;
+  private Material material;
+  public void jedz(){
+      Console.WriteLine("jedź");
+  }
+  public string getKolor()
+      {
+          return kolor;
+      }
+      public void setKolor(string akolor)
+      {
+          this.kolor = akolor;
+      }
+  public void setMaterial(Material amaterial){
+      this.material = amaterial;
+  }
+  public Rower(Producent aproducent){
+    this.producent = aproducent;
+  }
 }
 internal class Program
 {
