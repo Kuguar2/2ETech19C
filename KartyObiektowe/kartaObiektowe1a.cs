@@ -4,7 +4,7 @@ class Rower{
   private string kolor;
   private Material material;
   public void jedz(){
-      Console.WriteLine("jedz");
+      Console.WriteLine("jedź");
   }
   public string getKolor()
       {
