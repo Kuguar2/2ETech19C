@@ -65,6 +65,7 @@ internal class Program
         Producent p1 = new Producent();
         Material m1 = new Material();
         Rower r1 = new Rower(p1);
+        r1.setMaterial(m1);
         r1.setKolor("czerwony");
         m1.setId(2);
     }
