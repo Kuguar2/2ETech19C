@@ -63,8 +63,37 @@ namespace ConsoleApp3
             Console.WriteLine($"suma = {suma}");
             */
 
+            /* zad 3
+            int a = 0;
+            for (int i = 10; i < 100; i++)
+            {
+                if (i % 7 == 0)
+                {
+                    a = i;
+                }
+            }
+            Console.WriteLine($"{a}");
+            int ile = 0;
+            for (int i = 0; i < 1000; i++)
+            {
+                if (i * a > 999 && i * a < 10000)
+                {
+                    ile += 1;
+                }
+            }
+            Console.WriteLine($"{ile}");
+            */
 
-            
+            int ile = 0;
+            for(int i = 10; i < 100; i++)
+            {
+                if(i / 10 > i % 10 && i / 10 >= i % 10 * 2) {
+                    ile += 1;
+                    Console.WriteLine($"{i}");
+                }
+            }
+            Console.WriteLine($"{ile}");
+
             Console.ReadKey();
         }
     }
