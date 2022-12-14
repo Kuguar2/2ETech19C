@@ -6,28 +6,6 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    class Koszyk
-    {
-        private int id;
-        private Produkt produkt;
-        private Uzytkownik uzytkownik;
-        public int getId()
-        {
-            return id;
-        }
-        public void operation()
-        {
-            Console.WriteLine("operation");
-        }
-        public Koszyk(Produkt aprodukt)
-        {
-            this.produkt = aprodukt;
-        }
-        public void setUzytkownik(Uzytkownik auzytkownik)
-        {
-            this.uzytkownik = auzytkownik;
-        }
-    }
     class Produkt
     {
         private string nazwa;
@@ -56,20 +34,6 @@ namespace ConsoleApp2
             this.opis = aopis;
         }
     }
-    class Uzytkownik
-    {
-        private string login;
-        private string haslo;
-        private Profil profil;
-        public void loguj()
-        {
-            Console.WriteLine("zalogowano");
-        }
-        public Uzytkownik(Profil aprofil)
-        {
-            this.profil = aprofil;
-        }
-    }
     class Profil
     {
         private string imie;
@@ -86,6 +50,42 @@ namespace ConsoleApp2
         public void setNazwisko(string anazwisko)
         {
             this.nazwisko = anazwisko;
+        }
+    }
+    class Uzytkownik
+    {
+        private string login;
+        private string haslo;
+        private Profil profil;
+        public void loguj()
+        {
+            Console.WriteLine("zalogowano");
+        }
+        public Uzytkownik(Profil aprofil)
+        {
+            this.profil = aprofil;
+        }
+    }
+    class Koszyk
+    {
+        private int id;
+        private Produkt produkt;
+        private Uzytkownik uzytkownik;
+        public int getId()
+        {
+            return id;
+        }
+        public void operation()
+        {
+            Console.WriteLine("operation");
+        }
+        public Koszyk(Produkt aprodukt)
+        {
+            this.produkt = aprodukt;
+        }
+        public void setUzytkownik(Uzytkownik auzytkownik)
+        {
+            this.uzytkownik = auzytkownik;
         }
     }
     class Program
