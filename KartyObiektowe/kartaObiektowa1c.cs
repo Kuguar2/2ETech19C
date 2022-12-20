@@ -67,7 +67,7 @@ namespace ConsoleApp4
         private string nazwa;
         private Szkola szkola;
         private Nauczyciel wychowawca;
-        private ArrayList listaUczniow = new ArrayList();
+        private List<Uczen> listaUczniow = new List<Uczen>();
         private Nauczyciel wychowawcaDrugi;
         public Klasa(Szkola aszkola,Nauczyciel awychowawca)
         {
@@ -78,6 +78,10 @@ namespace ConsoleApp4
         {
             this.wychowawcaDrugi = awychowawcadrugi;
         }
+        public void setListaUczniow(List<Uczen> alistaUczniow)
+        {
+            this.listaUczniow = alistaUczniow;
+        }
 
     }
     class Program
@@ -87,6 +91,15 @@ namespace ConsoleApp4
             Szkola s1 = new Szkola();
             Uczen u1 = new Uczen();
             u1.setSzkola(s1);
+            u1.feedback();
+            s1.setWezwanie("wzywam");
+
+            Nauczyciel n1 = new Nauczyciel("Bartosz");
+            n1.setSzkola(s1);
+
+            Klasa k1 = new Klasa(s1, n1);
+
+            k1.setNauczyciel(n1);
         }
     }
 }
