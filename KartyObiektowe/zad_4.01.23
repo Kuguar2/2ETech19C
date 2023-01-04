@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp17
+{
+    internal class Program
+    {
+        class Pojazd
+        {
+            private string nazwa;
+            private int vin;
+
+            public void jedz()
+            {
+                Console.WriteLine("eat");
+            }
+            public void tankuj()
+            {
+                Console.WriteLine("tankuje");
+            }
+        }
+        class Samochod : Pojazd
+        {
+            private int oc;
+
+            public void zaparkuj()
+            {
+                Console.WriteLine("parkuje");
+            }
+
+        }
+        class Motur : Pojazd
+        {
+            public void zalozKask()
+            {
+                Console.WriteLine("zakładam kask");
+            }
+        }
+        class Koparka : Pojazd
+        {
+            private string udt;
+
+            public void kop()
+            {
+                Console.WriteLine("kopie bitcoiny");
+            }
+        }
+        static void Main(string[] args)
+        {
+            Koparka ko1 = new Koparka();
+            ko1.kop();
+            ko1.tankuj();
+
+            Motur mo1 = new Motur();
+            mo1.zalozKask();
+            mo1.jedz();
+
+            Samochod so1 = new Samochod();
+            so1.zaparkuj();
+            so1.tankuj();
+
+            Console.ReadKey();
+
+        }
+    }
+}
