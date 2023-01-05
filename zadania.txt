@@ -1,0 +1,28 @@
+zad 1
+
+using System;
+
+public class HelloWorld
+{
+    
+    public static void Main(string[] args)
+    {
+        string a = Console.ReadLine();
+        int i;
+        for(i = 0; i < a.Lenght;i++){
+            if(i == 0){
+                Console.Write(a[i]);
+            }
+            if(i == a.Lenght - 1){
+                Console.Write(a[i]);
+            }
+            if(a[i] == ' '){
+                Console.Write(a[i-1] + "-" + a[i + 1]);
+            }
+        }
+    }
+}
+
+
+zad 2 
+a)
