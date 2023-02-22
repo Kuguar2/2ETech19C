@@ -1,6 +1,7 @@
 using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,85 @@ namespace ConsoleApp6
         public string Imie { get; set; }
         // to robi to samo co student 3 i 2
     }
+    class Animal
+    {
+        // ustawiamy 2 właściwości Name i Domestic
+        public string Name { get; set; }
+        public bool Domestic { get; set; }
+        
+        public virtual void Introduce()
+        {
+            Console.WriteLine("hau");
+        }
+    }
+    class Pies : Animal
+    {
+        public override void Introduce()
+        {
+            base.Introduce();
+            Console.WriteLine(Name + " - hau od Psa");
+        }
+        
+    }
+    class Wilk : Animal
+    {
+        public override void Introduce()
+        {
+            Console.WriteLine(Name + " - hau od Wilka");
+        }
+    }
+
+    //Base Class: Firma (pole nip z geterem: "NIP - to nip firmy") i metoda WystawFakture()
+    // derived Class: Polska, Niemiecka
+    // Klasy mają mieć konstruktor
+    // Klasy Derived mają dodawać przed nip przedrostek PL/DE (w geterze)
+    class Firma
+    {
+        protected string nip;
+        public virtual string NIP
+        {
+            get
+            {
+                return nip + "- to nip firmy";
+            }
+        }
+        public Firma(string nip)
+        {
+            this.nip = nip;
+        }
+        public void WystawFakture()
+        {
+
+        }
+    }
+    class Polska : Firma
+    {
+        public override string NIP
+        {
+            get
+            {
+                return "PL" + base.NIP;
+            }
+        }
+        public Polska(string nip) :base(nip)
+        {
+            this.nip =nip + " ads ";
+        }
+    }
+    class Niemiecka : Firma
+    {
+        public override string NIP
+        {
+            get
+            {
+                return "DE" + base.NIP;
+            }
+        }
+        public Niemiecka(string nip) : base(nip)
+        {
+            this.nip = nip;
+        }
+     }
     class MyProgram
     {
         public static int Wieksza(int a,int b)
@@ -74,6 +154,7 @@ namespace ConsoleApp6
         }
         static void Main(string[] args)
         {
+            /*
             Console.WriteLine("Czesc");
             Console.WriteLine(Wieksza(4, 5));
             Student1 s1 = new Student1();
@@ -96,6 +177,19 @@ namespace ConsoleApp6
             s4.Imie = "Mateusz";
             Console.WriteLine(s4.Numer + " " + s4.Imie);
 
+            Pies p = new Pies();
+            p.Name = "Hubert";
+            p.Introduce();
+            Wilk w = new Wilk();
+            w.Name = "Piotrek";
+            w.Introduce();
+            */
+
+            Polska p = new Polska("123-123-12-12");
+            Console.WriteLine(p.NIP);
+
+            Niemiecka n = new Niemiecka("12-12-123-123 ");
+            Console.WriteLine(n.NIP);
             Console.ReadKey();
         }
     }
