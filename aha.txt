@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    class Availability
+    {
+        public void check()
+        {
+            Console.WriteLine("login dostępny");
+        }
+    }
+    class AddToDatabase
+    {
+        public static void InsertUser()
+        {
+            Console.WriteLine("dodano usera do bazy");
+        }
+    }
+    class AddToNewsletter
+    {
+        public void add()
+        {
+            Console.WriteLine("dodano do newslettera");
+        }
+    }
+    class ProducerRegistry
+    {
+        public void addToRegistry()
+        {
+            Console.WriteLine("dodaj do rejestru");
+        }
+    }
+    class Register
+    {
+        string username;
+        Availability availability;
+        AddToDatabase aToDatabase;
+        AddToNewsletter aToNewsletter;
+        ProducerRegistry aToRegistry;
+        public Register(Availability Aavailability, AddToDatabase AaToDatabase, AddToNewsletter AaToNewsletter, ProducerRegistry AaToRegistry)
+        {
+            this.availability = Aavailability;
+            this.aToDatabase = AaToDatabase;
+            this.aToNewsletter = AaToNewsletter;
+            this.aToRegistry = AaToRegistry;
+        }
+        public static void registerUser()
+        {
+            Availability availability = new Availability();
+            availability.check();
+            AddToDatabase.InsertUser();
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Register.registerUser();
+            Console.ReadLine();
+        }
+    }
+}
