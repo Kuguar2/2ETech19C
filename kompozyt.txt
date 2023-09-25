@@ -1,0 +1,51 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp7
+{
+    public abstract class MenuComponent
+    {
+        public string name { get; set; }
+        public void add(MenuComponent mc1) { }
+        public abstract void display();
+    }
+    public class MenuItem : MenuComponent
+    {
+        public MenuItem(string name) 
+        {
+            this.name = name;
+        }
+        public override void display() 
+        {
+            Console.WriteLine(name);
+        }
+    }
+    public class MenuComposit : MenuComponent
+    {
+        List<MenuComponent> lmc = new List<MenuComponent>();
+        public void add(MenuComponent mc1)
+        {
+            lmc.Add(mc1);
+        }
+        public override void display()
+        {
+            Console.WriteLine(name);
+        }
+        public MenuComposit(string name)
+        {
+            this.name = name;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+        }
+    }
+}
