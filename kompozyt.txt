@@ -45,7 +45,8 @@ namespace ConsoleApp7
     {
         static void Main(string[] args)
         {
-            
+            MenuItem fasada = new MenuItem("fasada");
+            Console.ReadKey();
         }
     }
 }
