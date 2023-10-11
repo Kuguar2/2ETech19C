@@ -1,0 +1,26 @@
+Dokumentacja techniczna aplikacji:
+
+1. Opis projektu 
+- krótki wstêp okreœlaj¹cy do czego ma aplikacja s³u¿yæ
+
+2. Okreœlenie wymagañ - 
+- ocena rozwi¹zañ np u konkurekcji
+- wymagania biznesowe 
+- cele platformy
+
+3. Architektura i zakres projektu - najwa¿niejsza czêœæ
+- z czego to jest zbudowane
+- opis szablonów
+- opis zawartoœci
+- opis funkcjonalnoœci
+- przypadki u¿ycia
+- lista modu³ów
+- inne: wersje jêzykowe, integracje z innymi systemami itp
+
+4. Wymagania techniczne
+- system
+- przegl¹darka 
+
+5. Pozosta³e - dochodz¹ jeszcze inne sk³adniki dobrej dokumentacji takie jak:
+- wymagania ruchu, SEO, grafika, technologia tworzenia i inne
+
