@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp19
+{
+    interface IDodajOdejmij
+    {
+        int a { get; set; }
+        int b { get; set; }
+        int dodaj();
+        int odejmij();
+    }
+    class Kalkulator : IDodajOdejmij
+    {
+        public int a { get; set; }
+        public int b { get; set; }
+        public Kalkulator(int A = 10, int B = 20)
+        {
+            a = A;
+            b = B;
+        }
+        public int dodaj()
+        {
+            return a + b;
+        }
+        public int odejmij()
+        {
+            return a - b;
+        }
+    }
+        interface IMnoz
+        {
+            int pomnoz();
+        }
+        class KalkulatorMnozenie : IMnoz
+        {
+            public int pomnoz()
+            {
+                IDodajOdejmij ido = new Kalkulator(10,15);
+                return ido.a * ido.b;
+            }
+        }
+        class KalkulatorMnozenieKlasowe : IDodajOdejmij, IMnoz
+        {
+            public int a { get; set; }
+            public int b { get; set; }
+            public KalkulatorMnozenieKlasowe(int A = 10, int B = 20)
+            {
+                a = A;
+                b = B;
+            }
+            public int dodaj()
+            {
+                return a + b;
+            }
+            public int odejmij()
+            {
+                return a - b;
+            }
+            public int pomnoz()
+            {
+                return a * b;
+            }
+        }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            IDodajOdejmij ido = new Kalkulator(6, 12);
+            Console.WriteLine(ido.odejmij());
+            Console.WriteLine(ido.dodaj());
+            KalkulatorMnozenie km = new KalkulatorMnozenie();
+            Console.WriteLine(km.pomnoz());
+            KalkulatorMnozenieKlasowe kmk = new KalkulatorMnozenieKlasowe();
+            Console.WriteLine(kmk.pomnoz());
+            Console.ReadKey();
+        }
+    }
+}
