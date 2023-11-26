@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    interface IBatalion { 
+    
+    }
+    interface IBrygada {
+    
+    }
+    interface IPulk {
+    
+    }
+    class PiechotaBatalion : IBatalion {
+    
+    }
+    class PiechotaBrygada : IBrygada {
+    
+    }
+    class PiechotaPulk : IPulk {
+    
+    }
+    class PancerneBatalion : IBatalion {
+    
+    }
+    class PancerneBrygada : IBrygada {
+    
+    }
+    class PancernePulk : IPulk {
+    
+    }
+
+    class SpecjalneBatalion : IBatalion {
+    
+    }
+    class SpecjalneBrygada : IBrygada {
+    
+    }
+    class SpecjalnePulk : IPulk {
+    
+    }
+
+    interface IWojskowaFabryka
+    {
+        IBatalion StworzBatalion();
+        IBrygada StworzBrygade();
+        IPulk StworzPulk();
+    }
+    class FabrykaPiechoty : IWojskowaFabryka
+    {
+        public IBatalion StworzBatalion()
+        {
+            return new PiechotaBatalion();
+        }
+        public IBrygada StworzBrygade()
+        {
+            return new PiechotaBrygada();
+        }
+        public IPulk StworzPulk()
+        {
+            return new PiechotaPulk();
+        }
+    }
+
+    class FabrykaPancernej : IWojskowaFabryka
+    {
+        public IBatalion StworzBatalion()
+        {
+            return new PancerneBatalion();
+        }
+        public IBrygada StworzBrygade()
+        {
+            return new PancerneBrygada();
+        }
+        public IPulk StworzPulk()
+        {
+            return new PancernePulk();
+        }
+    }
+
+    class FabrykaSpecjalnych : IWojskowaFabryka
+    {
+        public IBatalion StworzBatalion()
+        {
+            return new SpecjalneBatalion();
+        }
+        public IBrygada StworzBrygade()
+        {
+            return new SpecjalneBrygada();
+        }
+        public IPulk StworzPulk()
+        {
+            return new SpecjalnePulk();
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            IWojskowaFabryka fabrykaPiechoty = new FabrykaPiechoty();
+            IBatalion piechotaBatalion = fabrykaPiechoty.StworzBatalion();
+
+            IWojskowaFabryka fabrykaPancernej = new FabrykaPancernej();
+            IPulk pancernePulk = fabrykaPancernej.StworzPulk();
+
+            Console.ReadKey();
+        }
+    }
+}
